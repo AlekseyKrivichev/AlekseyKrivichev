@@ -1,0 +1,281 @@
+/* === Общие стили === */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #1e1e1e;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* === Шапка === */
+.header {
+  background: linear-gradient(to right, #373B44, #4286f4);
+  border-radius: 20px;
+  text-align: center;
+  padding: 30px 20px;
+  margin: 20px;
+  width: 90%;
+  max-width: 900px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.header .name {
+  margin: 0;
+  font-size: 28px;
+}
+
+.header .description {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+/* === Основной блок === */
+.main {
+  width: 90%;
+  max-width: 900px;
+  margin: 20px;
+}
+
+.avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  float: left;
+  margin-right: 20px;
+}
+
+.me {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+/* === Навыки === */
+ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+ul li {
+  background: rgba(255, 255, 255, 0.07);
+  padding: 10px 20px;
+  border-radius: 12px;
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.05);
+}
+
+/* === Кнопка === */
+#contactBtn {
+  margin: 20px 0;
+  padding: 12px 24px;
+  font-size: 16px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  background: linear-gradient(to right, #ff512f, #dd2476);
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+#contactBtn:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* === Контактная информация (появляется при клике) === */
+#contactInfo {
+  height: 0;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  opacity: 0;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 0 20px;
+  border-radius: 10px;
+}
+
+#contactInfo a {
+  color: #ffa500;
+}
+
+#contactInfo.active {
+  height: auto;
+  opacity: 1;
+  padding: 20px;
+}
+
+/* === Подвал === */
+.footer {
+  background-color: #000;
+  color: #fff;
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  position: fixed;
+  bottom: 0;
+}
+
+.footer a {
+  color: #ffa500;
+  margin: 0 10px;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.footer a:hover {
+  transform: scale(1.1);
+}
+
+* {
+  margin: 1;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .header,
+  .main {
+    width: 95%;
+    margin: 10px auto;
+    padding: 10px;
+  }
+
+  .avatar {
+    float: none;
+    display: block;
+    margin: 0 auto 20px auto;
+  }
+
+  .me {
+    text-align: center;
+  }
+
+  ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  ul li {
+    width: 100%;
+    text-align: center;
+  }
+
+  #contactBtn {
+    width: 100%;
+  }
+
+  .footer {
+    position: static; /* убираем фиксированность */
+    margin-top: 40px;
+  }
+}
+
+/* === Планшеты === */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .header,
+  .main {
+    width: 95%;
+    margin: 20px auto;
+    padding: 20px;
+  }
+
+  .avatar {
+    width: 130px;
+    height: 130px;
+    margin-right: 15px;
+  }
+
+  .me {
+    font-size: 16px;
+  }
+
+  #contactBtn {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+
+  ul li {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
+
+/* === Большие экраны (широкие мониторы) === */
+@media (min-width: 1200px) {
+  .header,
+  .main {
+    max-width: 1100px;
+  }
+
+  .me {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+
+  .avatar {
+    width: 180px;
+    height: 180px;
+  }
+
+  #contactBtn {
+    font-size: 18px;
+    padding: 14px 28px;
+  }
+
+  ul li {
+    font-size: 16px;
+    padding: 10px 24px;
+  }
+}
+
+/* === Очень маленькие экраны (телефоны 320–375px) === */
+@media (max-width: 375px) {
+  .header .name {
+    font-size: 20px;
+  }
+
+  .header .description {
+    font-size: 14px;
+  }
+
+  .avatar {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 15px;
+  }
+
+  .me {
+    font-size: 14px;
+    padding: 15px;
+  }
+
+  #contactBtn {
+    font-size: 14px;
+    padding: 10px 16px;
+    width: 100%;
+  }
+
+  ul li {
+    font-size: 13px;
+    padding: 8px 14px;
+    width: 100%;
+  }
+
+  .footer {
+    font-size: 13px;
+    padding: 15px 10px;
+  }
+
+  .footer a {
+    display: block;
+    margin: 5px 0;
+  }
+}
